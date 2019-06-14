@@ -21,6 +21,13 @@ public class PhoneController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String name = req.getParameter("name");
+        String brand = req.getParameter("brand");
+        String price = req.getParameter("price");
+        String description = req.getParameter("description");
 
+        Phone phone = new Phone(name, brand, price, description);
+        PhoneModel phoneModel = new PhoneModel();
+        phoneModel.addPhone(phone);
     }
 }
